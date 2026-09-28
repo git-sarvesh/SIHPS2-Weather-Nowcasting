@@ -1,0 +1,15 @@
+﻿import numpy as np
+from app.ingestion.terrain import _downstream_indices, d8_flow_direction, flow_accumulation_d8
+ramp = np.tile(np.linspace(1000, 0, 20), (15, 1))
+micro = ramp + 1e-4 * (np.arange(15)[:, None] + 1.37 * np.arange(20)[None, :])
+d = d8_flow_direction(micro, 2000.0, 2000.0)
+print('dirs col18/19', d[:, -2:].tolist())
+dn, v = _downstream_indices(d)
+print('dn col19', dn.reshape(d.shape)[:, -1].tolist())
+print('valid col19', v.reshape(d.shape)[:, -1].tolist())
+indeg = np.zeros(d.size, dtype=np.int64)
+np.add.at(indeg, dn[v], 1)
+print('indeg col19', indeg.reshape(d.shape)[:, -1].tolist())
+acc = flow_accumulation_d8(micro, d)
+print('acc col19', acc[:, -1].tolist())
+print('sum', acc.sum(), 'ncells', acc.size, 'max', acc.max())

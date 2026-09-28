@@ -1,0 +1,30 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+.env.local
+.env.*.local
+
+# Vite/TypeScript project configs are authored as .ts. If a stray compiled .js
+# lands beside one, Vite resolves the .js and silently ignores the real config
+# (this previously made `server.strictPort` appear not to work). Keep .js
+# companions out of the tree; only the *.config.js files below are intentional.
+vite.config.js
+vitest.config.js
+src/**/*.js
+!src/**/*.config.js
+
+logs
+*.log
+npm-debug.log*
+
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base-900 text-slate-200 font-sans antialiased;
+    /* Subtle grid backdrop: a geospatial feel without competing with the data. */
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.09), transparent 45%),
+      radial-gradient(circle at 85% 100%, rgba(244, 63, 94, 0.07), transparent 45%),
+      linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      100% 100%,
+      44px 44px,
+      44px 44px;
+  }
+
+  /* Visible focus for keyboard users on every interactive element. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-base-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-base-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-base-600;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-base-500;
+  }
+}
+
+@layer components {
+  /* Frosted panel used for every card, so the dark theme stays consistent. */
+  .panel {
+    @apply rounded-xl border border-base-600/70 bg-base-800/70 backdrop-blur-sm;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between gap-3 border-b border-base-600/60 px-4 py-3;
+  }
+
+  .panel-title {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-300;
+  }
+
+  .label {
+    @apply text-[11px] font-medium uppercase tracking-wider text-slate-400;
+  }
+
+  .value {
+    @apply font-mono text-sm text-slate-100;
+  }
+
+  /* Small status pill. */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-base-600
+           bg-base-700/80 px-3 py-2 text-xs font-semibold text-slate-200
+           transition hover:border-accent/60 hover:bg-base-600
+           disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-base-600;
+  }
+
+  .btn-primary {
+    @apply border-accent/50 bg-accent/15 text-accent hover:bg-accent/25;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-base-600 bg-base-900/80 px-3 py-2 text-sm
+           text-slate-100 placeholder:text-slate-500
+           focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Respect users who prefer reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulseGlow,
+    .animate-sweep {
+      animation: none !important;
+    }
+  }
+}
+
+/* MapLibre renders its own controls; align them with the dark theme. */
+.maplibregl-ctrl-group {
+  @apply !border-base-600 !bg-base-800;
+}
+.maplibregl-ctrl-group button + button {
+  @apply !border-base-600;
+}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  @apply opacity-80 invert;
+}
+.maplibregl-ctrl-attrib {
+  @apply !bg-base-800/80 !text-[10px] !text-slate-400;
+}
+.maplibregl-ctrl-attrib a {
+  @apply !text-slate-400;
+}
+.maplibregl-popup-content {
+  @apply !rounded-lg !border !border-base-600 !bg-base-800 !px-3 !py-2 !text-slate-200 !shadow-glow;
+}
+.maplibregl-popup-tip {
+  @apply !border-t-base-800;
+}

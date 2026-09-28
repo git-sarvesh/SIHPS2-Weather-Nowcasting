@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------------
+# SIHPS core runtime requirements (CPU-only, no paid services).
+# Python 3.10 - 3.12 recommended. PyTorch ships in requirements-torch.txt so the
+# API/Frontend/risk-engine can run (numpy reference backend) even where a torch
+# wheel is unavailable for the interpreter.
+# -----------------------------------------------------------------------------
+numpy>=1.26,<3
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-dotenv>=1.0
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+celery>=5.4
+redis>=5.0
+httpx>=0.27
+PyYAML>=6.0
+python-multipart>=0.0.9
+jinja2>=3.1

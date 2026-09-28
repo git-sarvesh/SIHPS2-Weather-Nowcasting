@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Data & artefacts (synthetic demo data is committed, large caches are not)
+data/*
+!data/.gitkeep
+!data/demo/
+!data/demo/**
+artifacts/
+*.pt
+*.onnx
+*.pth
+*.h5
+*.nc
+*.tif
+*.tiff
+!data/demo/**
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+# Local database files
+*.db
+*.sqlite
+*.sqlite3

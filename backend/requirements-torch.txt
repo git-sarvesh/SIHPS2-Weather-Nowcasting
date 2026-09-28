@@ -1,0 +1,19 @@
+# -----------------------------------------------------------------------------
+# Scientific / deep-learning stack.
+#   pip install -r requirements.txt -r requirements-torch.txt
+# On Windows CPU-only installs use:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# -----------------------------------------------------------------------------
+torch>=2.2
+captum>=0.7          # Integrated Gradients / Grad-CAM reference implementation
+xarray>=2024.3.0     # INSAT-3D HDF5 / IMDAA NetCDF reading
+h5py>=3.11
+netCDF4>=1.6.5
+rasterio>=1.3.9      # GeoTIFF DEM IO
+rioxarray>=0.15
+matplotlib>=3.8
+scipy>=1.11
+pytest>=8.0
+pytest-asyncio>=0.23
+jupyterlab>=4.1
+nbconvert>=7.16

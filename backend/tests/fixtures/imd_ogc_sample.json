@@ -1,0 +1,89 @@
+{
+  "_comment": [
+    "Trimmed excerpts of REAL IMD GeoServer OGC responses, retrieved 2026-09-26",
+    "from https://reactjs.imd.gov.in/geoserver/imd/ows over bbox 77.5,29.0,80.5,31.5.",
+    "Values are verbatim; only the feature list has been shortened. These are",
+    "used for offline, deterministic tests - no network access is required.",
+    "Source: India Meteorological Department."
+  ],
+  "synop": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "synop_data_layer.fid-42139",
+        "geometry": {"type": "Point", "coordinates": [77.63, 29.02]},
+        "properties": {
+          "station_id": 42139, "dat": "2026-09-26Z", "utc": 12,
+          "mslp": 1003, "winddir": 50, "windsp": 3, "dbtemp": 21.4,
+          "dewtemp": 20.8, "weather": 61, "nebulosity": 8, "rh": 96,
+          "3hrlyrain": 8, "6hrlyrain": 0, "12hrlyrain": 0, "24hrlyrain": 14
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "synop_data_layer.fid-42147",
+        "geometry": {"type": "Point", "coordinates": [79.65, 29.47]},
+        "properties": {
+          "station_id": 42147, "dat": "2026-09-26Z", "utc": 12,
+          "mslp": null, "winddir": 0, "windsp": 2, "dbtemp": 11.6,
+          "dewtemp": 10.0, "weather": 61, "nebulosity": 8, "rh": 100,
+          "3hrlyrain": null, "6hrlyrain": null, "12hrlyrain": null,
+          "24hrlyrain": 71
+        }
+      }
+    ]
+  },
+  "aws": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "aws_data_layer.fid-A0B21F2A",
+        "geometry": {"type": "Point", "coordinates": [77.5411, 31.1178]},
+        "properties": {
+          "id": "A0B21F2A", "call_sign": "KKI", "station_id": null,
+          "dat": "2026-08-21Z", "time": "1970-01-01T06:15:00Z",
+          "rain_sel": "10", "rainfall": "26.0", "temp": "26.1",
+          "dewpoint": 0, "rh": "70", "mslp": "1000", "nebulosity": 0
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "aws_data_layer.fid-zero-window",
+        "geometry": {"type": "Point", "coordinates": [78.5, 30.0]},
+        "properties": {
+          "id": "ZERO_WINDOW", "dat": "2026-09-26Z", "time": "1970-01-01T00:00:00Z",
+          "rain_sel": "0.0", "rainfall": "33.5", "temp": "20.0"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "aws_data_layer.fid-null-window",
+        "geometry": {"type": "Point", "coordinates": [79.0, 29.5]},
+        "properties": {
+          "id": "NULL_WINDOW", "dat": "2026-03-13Z", "time": "1970-01-01T01:00:00Z",
+          "rain_sel": "NULL", "rainfall": "5.0", "temp": "8.1"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "aws_data_layer.fid-impossible",
+        "geometry": {"type": "Point", "coordinates": [79.3, 30.4]},
+        "properties": {
+          "id": "IMPOSSIBLE", "dat": "2026-09-26Z", "time": "1970-01-01T00:00:00Z",
+          "rain_sel": "0.1", "rainfall": "113.0", "temp": "15.9"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "aws_data_layer.fid-sentinel",
+        "geometry": {"type": "Point", "coordinates": [78.8, 30.2]},
+        "properties": {
+          "id": "SENTINEL", "dat": "2026-09-26Z", "time": "1970-01-01T00:00:00Z",
+          "rain_sel": "3", "rainfall": "10.0", "temp": "-999", "mslp": "-999"
+        }
+      }
+    ]
+  }
+}
